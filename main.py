@@ -91,5 +91,5 @@ with st.sidebar:
     and experiment with AI technologies freely.
     """)
 
-    st.write("Buy me a cup of coffee ☕[HERE](https://paystack.com/pay/scj36fu7mx)")
-st.write("Buy me a cup of coffee ☕[HERE](https://paystack.com/pay/scj36fu7mx)")
+    st.write("Feel free to buy me a cup of coffee ☕[HERE](https://paystack.com/pay/scj36fu7mx)")
+st.write("Feel free to buy me a cup of coffee ☕[HERE](https://paystack.com/pay/scj36fu7mx)")
