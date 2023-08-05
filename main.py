@@ -2,18 +2,7 @@ import os
 import streamlit as st
 import openai
 
-st.markdown("""
-<style>
-.css-iiif1v.ef3psqc3
-{
-    visibility: hidden;          
-}
-.css-h5rgaw.ea3mdgi1
-{
-    visibility: hidden;          
-}            
-</style>
-""", unsafe_allow_html=True)
+
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
    
@@ -23,7 +12,7 @@ def get_completion(prompt, model="gpt-3.5-turbo", api_key=None):
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
-        temperature=0,  # this is the degree of randomness of the model's output
+        temperature=0,  # Degree of randomness of the model's output
     )
     return response.choices[0].message["content"]
 
@@ -32,7 +21,7 @@ def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0,
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
-        temperature=temperature,  # this is the degree of randomness of the model's output
+        temperature=temperature,  # Degree of randomness  
     )
     return response.choices[0].message["content"]
 
@@ -57,17 +46,17 @@ def collect_messages(prompt, api_key=None, conversation=None):
 
 st.title("ArchiBot🤖")
 
-# Initialize the conversation state in session_state
+# Initialize conversation state in session_state
 if "conversation" not in st.session_state:
     st.session_state.conversation = None
 
-# Use st.form context manager to handle user input
+# st.form context manager to handle user input
 with st.form(key="user_input_form"):
-    # Set up a default prompt
+    # Default prompt
     default_prompt = "Type in your prompt!"
     prompt = st.text_input("User:", default_prompt)
 
-    # Submit the form immediately to start the conversation
+    # Submit  to start the conversation
     form_submit = st.form_submit_button("Submit!")
 
     # Collect messages and display conversation history
@@ -103,3 +92,4 @@ with st.sidebar:
     """)
 
     st.write("Buy me a cup of coffee ☕[HERE](https://paystack.com/pay/scj36fu7mx)")
+st.write("Buy me a cup of coffee ☕[HERE](https://paystack.com/pay/scj36fu7mx)")
